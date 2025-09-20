@@ -5,7 +5,7 @@ inputs:
     description: 'Comma-separated list of tag names/releases to delete assets from'
     required: true
   keep_days_assets:
-    description: 'Delete assets older than this number of days'
+    description: 'Keep assets newer than this number of days, delete older ones'
     required: false
     default: '30'
   token:
