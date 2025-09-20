@@ -1,0 +1,25 @@
+name: 'Delete Old Release Assets'
+description: 'Delete assets from multiple releases that are older than specified days'
+inputs:
+  tag_names:
+    description: 'Comma-separated list of tag names/releases to delete assets from'
+    required: true
+  keep_days_assets:
+    description: 'Delete assets older than this number of days'
+    required: false
+    default: '30'
+  token:
+    description: 'GitHub token with permissions to delete release assets'
+    required: true
+  dry_run:
+    description: 'If true, only list assets that would be deleted without actually deleting them'
+    required: false
+    default: 'false'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'trash-2'
+  color: 'red'
